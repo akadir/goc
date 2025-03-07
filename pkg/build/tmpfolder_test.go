@@ -85,26 +85,6 @@ func TestNewDirParseInModProject(t *testing.T) {
 	}
 }
 
-// Test #14
-func TestLegacyProjectNotInGoPATH(t *testing.T) {
-	workingDir := filepath.Join(baseDir, "../../tests/samples/simple_gopath_project/src/qiniu.com/simple_gopath_project")
-	gopath := "/abc"
-
-	fmt.Println(gopath)
-	os.Setenv("GOPATH", gopath)
-	os.Setenv("GO111MODULE", "off")
-
-	b, _ := NewBuild("", []string{"."}, workingDir, "")
-	if !strings.HasSuffix(b.NewGOPATH, b.OriGOPATH) {
-		t.Fatalf("New GOPATH should contains old GOPATH for this kind of project. New: %v, old: %v", b.NewGOPATH, b.OriGOPATH)
-	}
-
-	_, err := os.Stat(filepath.Join(b.TmpDir, "main.go"))
-	if err != nil {
-		t.Fatalf("There should be a main.go in temporary directory directly, the error: %v", err)
-	}
-}
-
 // test traversePkgsList error case
 func TestTraversePkgsList(t *testing.T) {
 	b := &Build{

@@ -1,6 +1,6 @@
 module github.com/qiniu/goc
 
-go 1.19
+go 1.23.0
 
 require (
 	github.com/gin-gonic/gin v1.7.7
@@ -15,10 +15,10 @@ require (
 	github.com/spf13/viper v1.6.2
 	github.com/stretchr/testify v1.6.1
 	github.com/tongjingran/copy v1.4.2
-	golang.org/x/mod v0.11.0
-	golang.org/x/net v0.0.0-20220722155237-a158d28d115b
+	golang.org/x/mod v0.24.0
+	golang.org/x/net v0.15.0
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d
-	golang.org/x/tools v0.1.12
+	golang.org/x/tools v0.13.0
 	k8s.io/test-infra v0.0.0-20200511080351-8ac9dbfab055
 )
 
@@ -51,9 +51,9 @@ require (
 	github.com/stretchr/objx v0.2.0 // indirect
 	github.com/subosito/gotenv v1.2.0 // indirect
 	github.com/ugorji/go/codec v1.2.6 // indirect
-	golang.org/x/crypto v0.0.0-20210711020723-a769d52b0f97 // indirect
-	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f // indirect
-	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/crypto v0.13.0 // indirect
+	golang.org/x/sys v0.12.0 // indirect
+	golang.org/x/text v0.13.0 // indirect
 	google.golang.org/appengine v1.6.5 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/ini.v1 v1.52.0 // indirect

@@ -64,10 +64,10 @@ func NewMemoryBasedServer() *server {
 }
 
 // Run starts coverage host center
-func (s *server) Run(port string) {
-	f, err := os.Create(LogFile)
+func (s *server) Run(port string, logFile string) {
+	f, err := os.Create(logFile)
 	if err != nil {
-		log.Fatalf("failed to create log file %s, err: %v", LogFile, err)
+		log.Fatalf("failed to create log file %s, err: %v", logFile, err)
 	}
 
 	// both log to stdout and file by default

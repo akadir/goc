@@ -43,16 +43,17 @@ goc server --port=localhost:8080
 			log.Fatalf("New file based server failed, err: %v", err)
 		}
 		server.IPRevise = IPRevise
-		server.Run(port)
+		server.Run(port, logFile)
 	},
 }
 
-var port, localPersistence string
+var port, localPersistence, logFile string
 var IPRevise bool
 
 func init() {
 	serverCmd.Flags().StringVarP(&port, "port", "", ":7777", "listen port to start a coverage host center")
 	serverCmd.Flags().StringVarP(&localPersistence, "local-persistence", "", "_svrs_address.txt", "the file to save services address information")
+	serverCmd.Flags().StringVarP(&logFile, "log-file", "", cover.LogFile, "the log file path for coverage server logs")
 	serverCmd.Flags().BoolVarP(&IPRevise, "ip_revise", "", true, "whether to do ip revise during registering. Recommend to set this as false if under NAT or Proxy environment")
 	rootCmd.AddCommand(serverCmd)
 }

@@ -26,7 +26,7 @@ import (
 
 // Run excutes the main package in addition with the internal goc features
 func (b *Build) Run() error {
-	cmd := exec.Command("/bin/bash", "-c", "go run "+b.BuildFlags+" "+b.GoRunExecFlag+" "+b.Packages+" "+b.GoRunArguments)
+	cmd := exec.Command("/bin/sh", "-c", "go run "+b.BuildFlags+" "+b.GoRunExecFlag+" "+b.Packages+" "+b.GoRunArguments)
 	cmd.Dir = b.TmpWorkingDir
 
 	if b.NewGOPATH != "" {
